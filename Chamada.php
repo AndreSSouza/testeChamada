@@ -83,6 +83,7 @@
 				while($obj = mysqli_fetch_row($query)){
 					
 					echo $obj[0];
+					
 					echo "<input type='hidden' name='valor[$x]' value='0'/>";
 					echo "<input type='checkbox' name='valor[$x]' value='1'/>";						
 					echo "<br>";													
