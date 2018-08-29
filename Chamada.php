@@ -67,25 +67,26 @@
 		$query = mysqli_query($con, $buscaAlunos);
 			
 		$total = mysqli_num_rows($query);
+					
+			
+		/*while($obj = mysqli_fetch_row($query)){
+			
+			echo $obj[0]."<br>";
+			
+		}*/
 		
-			$array = null;
 			
-		while($obj = mysqli_fetch_row($query)){
+    
 			
-			$array .= $obj[0].'|';
-			//echo $array;
-			
-			
-		}
-			//echo $array;
-			$explodido = explode('|', $array, -1);			
-			
-			for($x=0; $x<$total; $x++){								
-					echo $explodido[$x];
+		
+			for($x=0; $x<$total; $x++){				
+				while($obj = mysqli_fetch_row($query)){
+					
+					echo $obj[0];
 					echo "<input type='hidden' name='valor[$x]' value='0'/>";
 					echo "<input type='checkbox' name='valor[$x]' value='1'/>";						
 					echo "<br>";													
-			}
+			}}
 			
 			?>			
 			
